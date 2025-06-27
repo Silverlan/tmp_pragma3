@@ -238,6 +238,9 @@ if platform == "linux" and (c_compiler == "clang-20" or c_compiler == "clang++-2
 	print_msg("Setting cxx_compiler override to '" +cxx_compiler +"'")
 	os.chdir(curDir)
 
+	chmod a+rx c_compiler
+	chmod a+rx cxx_compiler
+
 if platform == "linux":
 	os.environ["CC"] = c_compiler
 	os.environ["CXX"] = cxx_compiler
