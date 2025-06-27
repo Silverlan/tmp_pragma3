@@ -238,8 +238,8 @@ if platform == "linux" and (c_compiler == "clang-20" or c_compiler == "clang++-2
 	print_msg("Setting cxx_compiler override to '" +cxx_compiler +"'")
 	os.chdir(curDir)
 
-	subprocess.run(["chmod","a+rx",c_compiler],check=True)
-	subprocess.run(["chmod","a+rx",cxx_compiler],check=True)
+	bin_dir = os.path.join(clang20_root, "bin")
+	subprocess.run(["chmod", "-R", "a+rx", bin_dir], check=True)
 
 if platform == "linux":
 	os.environ["CC"] = c_compiler
