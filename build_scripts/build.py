@@ -363,7 +363,8 @@ if platform == "linux":
 			"apt-get install ninja-build",
 
 			# Wayland
-			"apt-get install wayland-protocols"
+			"apt-get install wayland-protocols",
+			"apt-get install libdbus-1-dev"
 		]
 		install_system_packages(commands, no_confirm)
 
